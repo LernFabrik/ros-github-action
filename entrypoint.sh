@@ -4,6 +4,6 @@ set -e
 echo "Using ROS2 $1 Distribution"
 source "/opt/ros/$1/setup.bash"
 ls
-cd ~/$2
+cd $2
 ls
 source "/opt/ros/$1/setup.bash" && colcon build --symlink-install
