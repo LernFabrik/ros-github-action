@@ -1,0 +1,22 @@
+# action.yml
+name: 'ROS2 Environment'
+description: 'Define target distribution'
+inputs:
+  ros-distribution:  # id of input
+    description: 'ROS2 EoL Distribution'
+    required: true
+    default: 'foxy'
+  use-cuda:
+    description: 'Use CUDA environment'
+    required: true
+    default: true
+outputs:
+  ros-workspace-directory-name:
+    description: |
+      root directory name of the ROS workspace created for this CI code.
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - USE_CUDA=${{ inputs.ros-distribution }}
+    - USE_CUDA=${{ inputs.use-cuda }}
