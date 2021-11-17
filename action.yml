@@ -10,10 +10,10 @@ inputs:
     description: 'Use CUDA environment'
     required: true
     default: true
-  packages:
+  workspace_dir:
     description: 'List of Packages'
     required: true
-    default: true
+    default: 'colcon_ws'
 outputs:
   ros-workspace-directory-name:
     description: |
@@ -23,4 +23,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.ros-distribution }}
-    - ${{ inputs.packages }}
+    - ${{ inputs.workspace_dir }}
