@@ -18,5 +18,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - USE_CUDA=${{ inputs.ros-distribution }}
-    - USE_CUDA=${{ inputs.use-cuda }}
+    - ROS_DISTRO=${{ inputs.ros-distribution }}
