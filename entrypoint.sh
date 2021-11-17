@@ -6,5 +6,5 @@ source "/opt/ros/$1/setup.bash"
 cd $2
 sudo rosdep init
 rosdep update
-rosdep install --ignore-src --from-paths src -y
+sudo apt-get update && rosdep install --ignore-src --from-paths src -y
 source "/opt/ros/$1/setup.bash" && colcon build --symlink-install
